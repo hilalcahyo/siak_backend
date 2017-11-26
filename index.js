@@ -10,7 +10,10 @@ const Route_DELETE = require('./Routes/DELETE/route_delete')
 const server = new Hapi.Server();
 server.connection({ 
     host: 'localhost', 
-    port: 9000 
+    port: 9000,
+    routes: {
+        cors: true
+    }
 });
 
 // Add the route

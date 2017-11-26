@@ -1,7 +1,11 @@
  'use strict'
 const connection_mysql = require('../../Config/config_mysql')
 exports.handleQueryAccounts = (request, callback) => {
-    const queryStatment = 'SELECT * FROM table_nomer_rekening'
+    const queryStatment = 'SELECT '+
+    'id_rekening as value, '+
+    'nama_rekening as label ' +
+    'FROM `table_nomer_rekening`'+
+    'ORDER BY label ASC' 
     connection_mysql.connection.query(queryStatment, (errorDB, resultsDB, fieldsDB) => {
         if (errorDB) {
             throw errorDB
@@ -29,7 +33,7 @@ exports.handleQueryAccountByNamaRekening = (request, callback) => {
     
 }
 exports.handleQueryDetails = (request, callback) => {
-    const queryStatment = 'SELECT id_keterangan, deskripsi_keterangan FROM `table_keterangan` order by deskripsi_keterangan asc'
+    const queryStatment = 'SELECT id_keterangan as value, deskripsi_keterangan as label FROM `table_keterangan` order by deskripsi_keterangan asc'
     connection_mysql.connection.query(queryStatment, (errorDB, resultsDB, fieldsDB) => {
         if (errorDB) {
             throw errorDB
@@ -38,6 +42,5 @@ exports.handleQueryDetails = (request, callback) => {
         } else {
             callback(false, resultsDB)
         } 
-    });
-    
+    });   
 }
