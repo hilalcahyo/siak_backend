@@ -23,3 +23,14 @@ exports.handleAccountByNamaRekening = (request, reply) => {
         })
     })
 }
+exports.handleDetails = (request, reply) => {
+    model_get.handleQueryDetails(request, (error, result) => {
+        if(error === true) {
+            console.log('error nich')
+        } 
+        reply({
+            "error_json": error,
+            "result_json": result
+        })
+    })
+}

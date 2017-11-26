@@ -14,5 +14,12 @@ module.exports = [
         config: {
             auth: false,
         }, handler: controller_get.handleAccountByNamaRekening
+    },
+    {
+        method: 'GET',
+        path: '/details',
+        config: {
+            auth: false,
+        }, handler: controller_get.handleDetails
     }
 ]
