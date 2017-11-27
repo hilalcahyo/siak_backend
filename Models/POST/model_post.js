@@ -92,7 +92,7 @@ exports.handleQueryJurnalUmum = (request, callback) => {
         },
         (resultAll, cb) => {
             connection_mysql.connection.query(queryStatmentTableJurnalUmumDebet, 
-                [id_jurnal_umum_debet, request_id_rekening_credit, request_jumlah_credit, request_kode_jurnal_umum], 
+                [id_jurnal_umum_debet, request_id_rekening_debet, request_jumlah_debet, request_kode_jurnal_umum], 
                 (errorDB, resultsDB, fieldsDB) => {
                 if (errorDB) {
                     throw errorDB
