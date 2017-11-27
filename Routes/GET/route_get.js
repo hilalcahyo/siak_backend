@@ -28,5 +28,12 @@ module.exports = [
         config: {
             auth: false,
         }, handler: controller_get.handleDetails
+    },
+    {
+        method: 'GET',
+        path: '/details/table',
+        config: {
+            auth: false,
+        }, handler: controller_get.handleDetailsTable
     }
 ]

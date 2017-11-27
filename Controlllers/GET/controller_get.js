@@ -45,3 +45,14 @@ exports.handleAccountsTable = (request, reply) => {
         })
     })
 }
+exports.handleDetailsTable = (request, reply) => {
+    model_get.handleQueryDetailsTable(request, (error, result) => {
+        if(error === true) {
+            console.log('error nich')
+        } 
+        reply({
+            "error_json": error,
+            "result_json": result
+        })
+    })
+}

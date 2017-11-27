@@ -63,3 +63,21 @@ exports.handleQueryAccountsTable = (request, callback) => {
     });
     
 }
+exports.handleQueryDetailsTable = (request, callback) => {
+    const queryStatment = 'SELECT '+
+    'id_keterangan as id_keterangan, '+
+    'deskripsi_keterangan as deskripsi_keterangan ' +
+    'FROM `table_keterangan`'+
+    'WHERE `deleted_at` != "1"'
+    'ORDER BY deskripsi_keterangan ASC' 
+    connection_mysql.connection.query(queryStatment, (errorDB, resultsDB, fieldsDB) => {
+        if (errorDB) {
+            throw errorDB
+            console.log('ERROR ', errorDB)
+            callback(true, '')
+        } else {
+            callback(false, resultsDB)
+        } 
+    });
+    
+}
