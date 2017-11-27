@@ -44,3 +44,21 @@ exports.handleQueryDetails = (request, callback) => {
         } 
     });   
 }
+exports.handleQueryAccountsTable = (request, callback) => {
+    const queryStatment = 'SELECT '+
+    'id_rekening as id_rekening, '+
+    'nama_rekening as nama_rekening, ' +
+    'kode_rekening as kode_rekening ' +
+    'FROM `table_nomer_rekening`'+
+    'ORDER BY nama_rekening ASC' 
+    connection_mysql.connection.query(queryStatment, (errorDB, resultsDB, fieldsDB) => {
+        if (errorDB) {
+            throw errorDB
+            console.log('ERROR ', errorDB)
+            callback(true, '')
+        } else {
+            callback(false, resultsDB)
+        } 
+    });
+    
+}

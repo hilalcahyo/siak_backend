@@ -13,7 +13,7 @@ module.exports = [
         path: '/accounts/table',
         config: {
             auth: false
-        }, handler: controller_get.handleAccounts
+        }, handler: controller_get.handleAccountsTable
     },
     {
         method: 'GET',
