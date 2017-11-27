@@ -47,6 +47,8 @@ exports.handleQueryJurnalUmum = (request, callback) => {
     const request_jumlah_debet = request.payload.jumlah_debet
     const request_id_rekening_credit = request.payload.id_rekening_credit
     const request_jumlah_credit = request.payload.jumlah_credit
+    // console.log('ID REKENING DEBET >>', request_id_rekening_debet)
+    // console.log('ID REKENING KREDIT >>', request_id_rekening_credit)
 
     const id_jurnal_umum_debet = uuidv4()
     const id_jurnal_umum_kredit = uuidv4()
