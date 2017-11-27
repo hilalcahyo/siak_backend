@@ -7,5 +7,12 @@ module.exports = [
         config: {
             auth: false
         }, handler: controller_post.handleAccount
-    }
+    },
+    {
+        method: 'POST',
+        path: '/detail',
+        config: {
+            auth: false
+        }, handler: controller_post.handleDetail
+    },
 ]

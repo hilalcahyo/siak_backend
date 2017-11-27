@@ -10,6 +10,13 @@ module.exports = [
     },
     {
         method: 'GET',
+        path: '/accounts/table',
+        config: {
+            auth: false
+        }, handler: controller_get.handleAccounts
+    },
+    {
+        method: 'GET',
         path: '/account',
         config: {
             auth: false,

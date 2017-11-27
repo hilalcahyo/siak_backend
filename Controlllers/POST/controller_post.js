@@ -12,3 +12,14 @@ exports.handleAccount = (request, reply) => {
         })
     })
 }
+exports.handleDetail = (request, reply) => {
+    model_post.handleQueryDetail(request, (error, result) => {
+        if(error === true) {
+            console.log('error nich')
+        } 
+        reply({
+            "error_json": error,
+            "result_json": result
+        })
+    })
+}
