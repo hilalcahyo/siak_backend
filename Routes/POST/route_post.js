@@ -15,4 +15,11 @@ module.exports = [
             auth: false
         }, handler: controller_post.handleDetail
     },
+    {
+        method: 'POST',
+        path: '/jurnal_umum',
+        config: {
+            auth: false
+        }, handler: controller_post.handleJurnalUmum
+    },
 ]

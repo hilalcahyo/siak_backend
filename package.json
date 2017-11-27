@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/hilalcahyo/siak_backend#readme",
   "dependencies": {
+    "async": "^2.6.0",
     "hapi": "^16.6.2",
     "mysql": "^2.15.0",
     "uuid": "^3.1.0"

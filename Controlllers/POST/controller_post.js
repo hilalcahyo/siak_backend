@@ -23,3 +23,14 @@ exports.handleDetail = (request, reply) => {
         })
     })
 }
+exports.handleJurnalUmum = (request, reply) => {
+    model_post.handleQueryJurnalUmum(request, (error, result) => {
+        if(error === true) {
+            console.log('error nich')
+        } 
+        reply({
+            "error_json": error,
+            "result_json": result
+        })
+    })
+}
