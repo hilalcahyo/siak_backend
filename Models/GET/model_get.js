@@ -50,6 +50,7 @@ exports.handleQueryAccountsTable = (request, callback) => {
     'nama_rekening as nama_rekening, ' +
     'kode_rekening as kode_rekening ' +
     'FROM `table_nomer_rekening`'+
+    'WHERE `deleted_at` != "1"'
     'ORDER BY nama_rekening ASC' 
     connection_mysql.connection.query(queryStatment, (errorDB, resultsDB, fieldsDB) => {
         if (errorDB) {
