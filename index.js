@@ -34,7 +34,7 @@ server.route(Route_DELETE);
 
 const options = {
     ops: {
-        interval: 1000
+        interval: 60000
     },
     reporters: {
         myConsoleReporter: [{
