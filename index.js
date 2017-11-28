@@ -40,14 +40,26 @@ const options = {
         myConsoleReporter: [{
             module: 'good-squeeze',
             name: 'Squeeze',
-            args: [{ log: '*', response: '*' }]
+            args: [{
+                log: '*',
+                error: '*',
+                response: '*',
+                request: '*',
+                ops: '*'
+              }]
         }, {
             module: 'good-console'
         }, 'stdout'],
         myFileReporter: [{
             module: 'good-squeeze',
             name: 'Squeeze',
-            args: [{ ops: '*' }]
+            args: [{
+                log: '*',
+                error: '*',
+                response: '*',
+                request: '*',
+                ops: '*'
+              }]
         }, {
             module: 'good-squeeze',
             name: 'SafeJson'
