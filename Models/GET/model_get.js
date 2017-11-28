@@ -84,10 +84,10 @@ exports.handleQueryDetailsTable = (request, callback) => {
 exports.handleQueryJurnalUmumTable = (request, callback) => {
     const queryStatment = "SELECT \
     table_jurnal_umum_main.id_jurnal_umum_main, \
-    table_keterangan.deskripsi_keterangan as deskripsi_keterangan_debet, \
+    table_keterangan.deskripsi_keterangan as deskripsi_keterangan, \
     jurnal_umum_debet.jumlah as jumlah_debet, \
     jurnal_umum_kredit.jumlah as jumlah_kredit, \
-    jurnal_umum_debet.kode_jurnal_umum as kode_jurnal_umum_debet, \
+    jurnal_umum_debet.kode_jurnal_umum as kode_jurnal_umum, \
     table_nomer_rekening.nama_rekening as nama_rekening_debet, \
     table_nomer_rekening.kode_rekening as kode_rekening_debet, \
     tbl_rek_2.nama_rekening as nama_rekening_kredit, \
@@ -105,7 +105,7 @@ exports.handleQueryJurnalUmumTable = (request, callback) => {
     LEFT JOIN table_nomer_rekening tbl_rek_2 \
     ON tbl_rek_2.id_rekening = jurnal_umum_kredit.id_rekening \
     WHERE 1 \
-    GROUP BY kode_jurnal_umum_debet \
+    GROUP BY kode_jurnal_umum \
     ORDER BY table_jurnal_umum_main.created_at ASC " 
     connection_mysql.connection.query(queryStatment, (errorDB, resultsDB, fieldsDB) => {
         if (errorDB) {
