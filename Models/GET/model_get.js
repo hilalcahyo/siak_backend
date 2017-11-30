@@ -163,7 +163,8 @@ exports.handleQueryJurnalUmumTableWithIDRekening = (request, callback) => {
 exports.handleQueryNeracaSaldoDebet = (request, callback) => {
     const queryStatment = " select \
     sum(jumlah) as total, \
-    table_nomer_rekening.nama_rekening \
+    table_nomer_rekening.nama_rekening, \
+    table_nomer_rekening.kode_rekening \
     from \
         jurnal_umum_debet \
     LEFT JOIN table_nomer_rekening \
@@ -184,7 +185,8 @@ exports.handleQueryNeracaSaldoDebet = (request, callback) => {
 exports.handleQueryNeracaSaldoKredit = (request, callback) => {
     const queryStatment = " select \
     sum(jumlah) as total, \
-    table_nomer_rekening.nama_rekening \
+    table_nomer_rekening.nama_rekening, \
+    table_nomer_rekening.kode_rekening \
     from \
         jurnal_umum_kredit \
     LEFT JOIN table_nomer_rekening \
