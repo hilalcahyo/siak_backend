@@ -49,5 +49,19 @@ module.exports = [
         config: {
             auth: false,
         }, handler: controller_get.handleJurnalUmumTableWithIDRekening
+    },
+    {
+        method: 'GET',
+        path: '/neraca_saldo/debet',
+        config: {
+            auth: false,
+        }, handler: controller_get.handleNeracaSaldoDebet
+    },
+    {
+        method: 'GET',
+        path: '/neraca_saldo/kredit',
+        config: {
+            auth: false,
+        }, handler: controller_get.handleNeracaSaldoKredit
     }
 ]

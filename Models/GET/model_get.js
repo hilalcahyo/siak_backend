@@ -160,3 +160,45 @@ exports.handleQueryJurnalUmumTableWithIDRekening = (request, callback) => {
         } 
     });
 }
+exports.handleQueryNeracaSaldoDebet = (request, callback) => {
+    const queryStatment = " select \
+    sum(jumlah) as total, \
+    table_nomer_rekening.nama_rekening \
+    from \
+        jurnal_umum_debet \
+    LEFT JOIN table_nomer_rekening \
+    ON table_nomer_rekening.id_rekening = jurnal_umum_debet.id_rekening \
+    where \
+        1 \
+    GROUP BY jurnal_umum_debet.id_rekening "
+    connection_mysql.connection.query(queryStatment, (errorDB, resultsDB, fieldsDB) => {
+        if (errorDB) {
+            throw errorDB
+            console.log('ERROR ', errorDB)
+            callback(true, '')
+        } else {
+            callback(false, resultsDB)
+        } 
+    });
+}
+exports.handleQueryNeracaSaldoKredit = (request, callback) => {
+    const queryStatment = " select \
+    sum(jumlah) as total, \
+    table_nomer_rekening.nama_rekening \
+    from \
+        jurnal_umum_kredit \
+    LEFT JOIN table_nomer_rekening \
+    ON table_nomer_rekening.id_rekening = jurnal_umum_kredit.id_rekening \
+    where \
+        1 \
+    GROUP BY jurnal_umum_kredit.id_rekening "
+    connection_mysql.connection.query(queryStatment, (errorDB, resultsDB, fieldsDB) => {
+        if (errorDB) {
+            throw errorDB
+            console.log('ERROR ', errorDB)
+            callback(true, '')
+        } else {
+            callback(false, resultsDB)
+        } 
+    });
+}

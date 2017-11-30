@@ -78,3 +78,25 @@ exports.handleJurnalUmumTableWithIDRekening = (request, reply) => {
         })
     })
 }
+exports.handleNeracaSaldoKredit = (request, reply) => {
+    model_get.handleQueryNeracaSaldoKredit(request, (error, result) => {
+        if(error === true) {
+            console.log('error nich')
+        } 
+        reply({
+            "error_json": error,
+            "result_json": result
+        })
+    })
+}
+exports.handleNeracaSaldoDebet = (request, reply) => {
+    model_get.handleQueryNeracaSaldoDebet(request, (error, result) => {
+        if(error === true) {
+            console.log('error nich')
+        } 
+        reply({
+            "error_json": error,
+            "result_json": result
+        })
+    })
+}
