@@ -67,3 +67,14 @@ exports.handleJurnalUmumTable = (request, reply) => {
         })
     })
 }
+exports.handleJurnalUmumTableWithIDRekening = (request, reply) => {
+    model_get.handleQueryJurnalUmumTableWithIDRekening(request, (error, result) => {
+        if(error === true) {
+            console.log('error nich')
+        } 
+        reply({
+            "error_json": error,
+            "result_json": result
+        })
+    })
+}

@@ -22,16 +22,7 @@ server.route(Route_POST);
 server.route(Route_PUT);
 server.route(Route_DELETE);
 
-// Start the server
-// server.start((err) => {
-
-//     if (err) {
-//         throw err;
-//     }
-//     console.log('Server running at:', server.info.uri);
-// });
-
-
+// Add Loggger
 const options = {
     ops: {
         interval: 60000

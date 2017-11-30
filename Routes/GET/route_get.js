@@ -42,5 +42,12 @@ module.exports = [
         config: {
             auth: false,
         }, handler: controller_get.handleJurnalUmumTable
+    },
+    {
+        method: 'GET',
+        path: '/jurnal_umum/table/{id_rekening}',
+        config: {
+            auth: false,
+        }, handler: controller_get.handleJurnalUmumTableWithIDRekening
     }
 ]
