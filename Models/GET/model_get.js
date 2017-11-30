@@ -83,7 +83,7 @@ exports.handleQueryDetailsTable = (request, callback) => {
 }
 exports.handleQueryJurnalUmumTable = (request, callback) => {
     const queryStatment = "SELECT \
-    table_jurnal_umum_main.updated_at  \
+    table_jurnal_umum_main.updated_at, \
     table_jurnal_umum_main.id_jurnal_umum_main, \
     table_keterangan.deskripsi_keterangan as deskripsi_keterangan, \
     jurnal_umum_debet.jumlah as jumlah_debet, \
