@@ -68,7 +68,7 @@ exports.handleQueryDetailsTable = (request, callback) => {
     'id_keterangan as id_keterangan, '+
     'deskripsi_keterangan as deskripsi_keterangan ' +
     'FROM `table_keterangan`'+
-    'WHERE `deleted_at` != "1"'
+    'WHERE `deleted_at` IS NOT NULL' +
     'ORDER BY deskripsi_keterangan ASC' 
     connection_mysql.connection.query(queryStatment, (errorDB, resultsDB, fieldsDB) => {
         if (errorDB) {
